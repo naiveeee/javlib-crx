@@ -1,0 +1,33 @@
+{
+    "manifest_version": 2,
+    "name": "javlib extension",
+    "version": "1.0",
+    "description": "查看当前影片的大图和种子(图片查询必须要有日本ip或链接日本vpn)",
+    "browser_action": {
+        "default_title": "javlib"
+    },
+    "content_scripts":[
+        {
+            "matches": ["http://www.j17v.com/cn/?v=javli*"],
+            "js": ["dist/content-scripts/main.js"],
+            "run_at": "document_end"
+        }
+    ],
+    "background": {
+        "scripts": [
+            "dist/jquery-3.3.1.min.js",
+            "dist/background/main.js"
+        ]
+    },
+    "permissions":
+    [
+        "contextMenus",
+        "tabs",
+        "notifications",
+        "webRequest",
+        "webRequestBlocking",
+        "storage",
+        "http://*/*",
+        "https://*/*"
+    ]
+}
