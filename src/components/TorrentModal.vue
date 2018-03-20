@@ -24,7 +24,7 @@ export default {
         return this.$store.state.torrentModalShow
       },
       set: function () {
-        this.$store.commit('toggleTorrentShow')
+        this.$store.commit('TOGGLE_TORRENT_SHOW')
       }
     }
   }

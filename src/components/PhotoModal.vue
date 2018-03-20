@@ -19,7 +19,7 @@ export default {
         return this.$store.state.photoModalShow
       },
       set: function () {
-        this.$store.commit('togglePhotoShow')
+        this.$store.commit('TOGGLE_PHOTO_SHOW')
       }
     }
   }

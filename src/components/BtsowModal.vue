@@ -20,7 +20,7 @@ export default {
         return this.$store.state.btsowModalShow
       },
       set: function () {
-        this.$store.commit('toggleBtsowShow')
+        this.$store.commit('TOGGLE_BTSOW_SHOW')
       }
     }
   }
