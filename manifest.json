@@ -8,17 +8,19 @@
     },
     "content_scripts":[
         {
-            "matches": ["http://www.j17v.com/cn/?v=javli*"],
+            "matches": ["*://*/cn/?v=javli*"],
             "js": ["dist/content-scripts/main.js"],
             "run_at": "document_end"
         }
     ],
     "background": {
         "scripts": [
-            "dist/jquery-3.3.1.min.js",
             "dist/background/main.js"
         ]
     },
+    "web_accessible_resources": [
+        "dist/header-logo.png"
+    ],
     "permissions":
     [
         "contextMenus",
@@ -26,8 +28,6 @@
         "notifications",
         "webRequest",
         "webRequestBlocking",
-        "storage",
-        "http://*/*",
-        "https://*/*"
+        "storage"
     ]
 }

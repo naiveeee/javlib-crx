@@ -5,7 +5,7 @@ import BtsowRequest from "./BtsowRequest"
 chrome.runtime.onConnect.addListener(function(port){
     if(port.name === 'DMM'){
         port.onMessage.addListener(function(request){
-            DMMRequest(`http://www.dmm.co.jp/search/=/searchstr=${request.id}/sort=rankprofile/`,response => port.postMessage(response))
+            DMMRequest(request.id, request.cid, response => port.postMessage(response))
         })
     }
     if(port.name === 'TorrentKitty'){

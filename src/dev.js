@@ -2,10 +2,8 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App.vue'
-import store from './vuex/store'
+import store from './store'
 import 'element-ui/lib/theme-chalk/index.css'
-import VueBar from 'vuebar'
-Vue.use(VueBar)
 
 /* eslint-disable */
 new Vue({
@@ -14,12 +12,13 @@ new Vue({
   components: { App },
   template: '<App />',
   beforeCreate: function () {
-    this.$store.commit('setPhotos', {
+    this.$store.commit('TOGGLE_PHOTO_LOAD')
+    this.$store.commit('SET_PHOTO', {
       isSuccess: false,
       result: 'hello'
     })
     setTimeout(() => {
-      this.$store.commit('addTorrents',
+      this.$store.commit('ADD_TORRENT',
       [
         {
           name: 'aaa',
@@ -100,9 +99,10 @@ new Vue({
         }
       ]
     )
-    this.$store.commit('toggleTorrentLoading')
-    }, 5000);
-    this.$store.commit('addBtsows',
+    this.$store.commit('TOGGLE_TORRENT_LOAD')
+    }, 1000);
+    this.$store.commit('TOGGLE_BTSOW_LOAD')
+    this.$store.commit('ADD_BTSOW',
       [
         {
           name: 'aaa',
@@ -184,7 +184,7 @@ new Vue({
     )
   }
 })
-// vm.$store.commit('setPhotos', {
+// vm.$store.commit('SET_PHOTO', {
 //   photos: {
 //     isSuccess: true,
 //     result: ['https://pics.dmm.co.jp/digital/video/mide00506/mide00506jp-1.jpg',

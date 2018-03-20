@@ -55,13 +55,13 @@ export default {
   },
   methods: {
     openPhotoModal: function () {
-      this.$store.commit('togglePhotoShow')
+      this.$store.commit('TOGGLE_PHOTO_SHOW')
     },
     openTorrentModal: function () {
-      this.$store.commit('toggleTorrentShow')
+      this.$store.commit('TOGGLE_TORRENT_SHOW')
     },
     openBtsowModal: function () {
-      this.$store.commit('toggleBtsowShow')
+      this.$store.commit('TOGGLE_BTSOW_SHOW')
     }
   }
 }

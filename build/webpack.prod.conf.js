@@ -1,5 +1,5 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require('webpack')
 module.exports = {
   // JS 执行入口文件
   entry: {
@@ -43,5 +43,17 @@ module.exports = {
       }
     ]
   },
-  resolve: { alias: { 'vue': 'vue/dist/vue.js' } }
+  resolve: { alias: { 'vue': 'vue/dist/vue.min.js' } },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"production"'
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    })
+  ]
 };
