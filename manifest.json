@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "javlib extension",
     "version": "1.0",
-    "description": "查看当前影片的大图和种子(图片查询必须要有日本ip或链接日本vpn)",
+    "description": "查看当前影片的大图和种子",
     "browser_action": {
         "default_title": "javlib"
     },
