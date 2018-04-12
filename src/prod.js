@@ -1,8 +1,10 @@
 import Vue from "vue";
 import App from "./App.vue";
 import store from "./store";
+import vueBar from 'vuebar'
 import "element-ui/lib/theme-chalk/index.css";
 import getImg from "./background/getLargeImg"
+Vue.use(vueBar)
 //构建展示框
 var app = document.createElement("div");
 app.id = "app"

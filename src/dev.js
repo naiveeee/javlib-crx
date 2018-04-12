@@ -3,8 +3,9 @@
 import Vue from 'vue'
 import App from './App.vue'
 import store from './store'
+import vueBar from 'vuebar'
 import 'element-ui/lib/theme-chalk/index.css'
-
+Vue.use(vueBar)
 /* eslint-disable */
 new Vue({
   el: '#app',
@@ -14,8 +15,19 @@ new Vue({
   beforeCreate: function () {
     this.$store.commit('TOGGLE_PHOTO_LOAD')
     this.$store.commit('SET_PHOTO', {
-      isSuccess: false,
-      result: 'hello'
+      photos: {
+        isSuccess: true,
+        result: ['https://pics.dmm.co.jp/digital/video/mide00506/mide00506jp-1.jpg',
+          'https://pics.dmm.co.jp/digital/video/mide00506/mide00506jp-2.jpg',
+          'https://pics.dmm.co.jp/digital/video/mide00506/mide00506jp-3.jpg',
+          'https://pics.dmm.co.jp/digital/video/mide00506/mide00506jp-4.jpg',
+          'https://pics.dmm.co.jp/digital/video/mide00506/mide00506jp-5.jpg',
+          'https://pics.dmm.co.jp/digital/video/mide00506/mide00506jp-6.jpg',
+          'https://pics.dmm.co.jp/digital/video/mide00506/mide00506jp-7.jpg',
+          'https://pics.dmm.co.jp/digital/video/mide00506/mide00506jp-8.jpg',
+          'https://pics.dmm.co.jp/digital/video/mide00506/mide00506jp-9.jpg',
+          'https://pics.dmm.co.jp/digital/video/mide00506/mide00506jp-10.jpg']
+      }
     })
     setTimeout(() => {
       this.$store.commit('ADD_TORRENT',
@@ -184,18 +196,3 @@ new Vue({
     )
   }
 })
-// vm.$store.commit('SET_PHOTO', {
-//   photos: {
-//     isSuccess: true,
-//     result: ['https://pics.dmm.co.jp/digital/video/mide00506/mide00506jp-1.jpg',
-//       'https://pics.dmm.co.jp/digital/video/mide00506/mide00506jp-2.jpg',
-//       'https://pics.dmm.co.jp/digital/video/mide00506/mide00506jp-3.jpg',
-//       'https://pics.dmm.co.jp/digital/video/mide00506/mide00506jp-4.jpg',
-//       'https://pics.dmm.co.jp/digital/video/mide00506/mide00506jp-5.jpg',
-//       'https://pics.dmm.co.jp/digital/video/mide00506/mide00506jp-6.jpg',
-//       'https://pics.dmm.co.jp/digital/video/mide00506/mide00506jp-7.jpg',
-//       'https://pics.dmm.co.jp/digital/video/mide00506/mide00506jp-8.jpg',
-//       'https://pics.dmm.co.jp/digital/video/mide00506/mide00506jp-9.jpg',
-//       'https://pics.dmm.co.jp/digital/video/mide00506/mide00506jp-10.jpg']
-//   }
-// })

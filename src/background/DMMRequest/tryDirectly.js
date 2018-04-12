@@ -1,6 +1,7 @@
-//尝试直接从pics.dmm.co.jp获取图片 不需要日本的ip 访问速度慢 成功率较低
+//尝试直接从pics.dmm.co.jp获取图片 不需要日本的ip
 import axios from 'axios'
-export default function tryIt (cid, index = 1) {
+import tryAllCids from './tryAllCids'
+function tryIt (cid, index = 1) {
   let url = `https://pics.dmm.co.jp/digital/video/${cid}/${cid}jp-${index}.jpg`
   return axios({
     url: url,
@@ -12,4 +13,19 @@ export default function tryIt (cid, index = 1) {
     }
     return Promise.resolve(index - 1).then(num => !num ? [] : Array.apply(null, {length: num}).map((_, index) => `https://pics.dmm.co.jp/digital/video/${cid}/${cid}jp-${index+1}.jpg`))
   })
+}
+export default async function (cid) {
+  for(let i = 0, cids = tryAllCids(cid); i < cids.length; i++){
+    let res = await tryIt(cids[i])
+    if(res.length != 0){
+      return {
+        isSuccess: true,
+        result: res
+      }
+    }
+  }
+  return {
+    isSuccess: false,
+    result: ''
+  }
 }
