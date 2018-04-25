@@ -26,10 +26,11 @@ TorrentKitty
 </div>
 
 ## download
-百度网盘地址：<a href="https://pan.baidu.com/s/1T7rPk_Yq43KGRlW2o1p1pw#list/path=%2F">这是链接</a>
+<p>百度网盘地址：<a href="https://pan.baidu.com/s/1T7rPk_Yq43KGRlW2o1p1pw#list/path=%2F">这是链接</a></p>
 
 ### for windows
-<div>①解压javlib-crx.rar --> ②在chrome搜索栏中输入地址 chrome://extensions/ --> ③右上角启用开发者模式 --> ④把解压好的文件夹拖入浏览器中</div>
+<p>①解压javlib-crx.rar --> ②在chrome搜索栏中输入地址 chrome://extensions/ --> ③右上角启用开发者模式 --> ④把解压好的文件夹拖入浏览器中</p>
+<p>每次重启浏览器会提示“请停用开发者模式运行的扩展程序” 取消了就行了（windows下面不让非chrome商店的插件运行，只能以开发者的方式使用，mac下无影响）</p>
 
 ### for mac
-<div>把javlib-crx-packed.crx文件拖入浏览器中即可</div>
+<p>把javlib-crx-packed.crx文件拖入浏览器中即可</p>
