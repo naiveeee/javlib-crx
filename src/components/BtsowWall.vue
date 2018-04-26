@@ -62,3 +62,9 @@ export default {
     cursor: pointer;
   }
 </style>
+<style>
+  .el-table__body-wrapper {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+</style>
