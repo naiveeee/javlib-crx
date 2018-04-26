@@ -3,7 +3,7 @@
         <template v-if = "responseInfo.flag">
             <CarouselItem v-for = "(val,index) in responseInfo.result" :key = "index">
                 <div class="demo-carousel" v-bar>
-                    <div>
+                    <div :class="isWin ? 'win_compatible' : 'null'">
                         <img :src="val" class="my-img"/>
                     </div>
                 </div>
@@ -17,6 +17,14 @@
     </Carousel>
 </template>
 <style scoped>
+.win_compatible{
+    width: calc(100% + 20px) !important;
+    box-sizing: border-box !important;
+    padding-right: 0 !important; 
+}
+.null {
+
+}
 .demo-carousel {
   height: 500px;
   width: 100%;
@@ -86,6 +94,11 @@ export default {
   components: {
     Carousel,
     CarouselItem
+  },
+  data () {
+    return {
+        isWin: this.$store.state.isWin
+    }
   },
   computed: {
     responseInfo () {
