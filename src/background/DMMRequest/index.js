@@ -1,7 +1,6 @@
 import axios from 'axios'
 import tryDirectly from './tryDirectly'
 import tryIndirectly from './tryIndirectly'
-import tryAllCids from './tryAllCids'
 export default async (id, cid, postMessage) => {
   var directResp,
     indirectResp;

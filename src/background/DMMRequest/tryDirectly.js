@@ -15,15 +15,19 @@ function tryIt (cid, index = 1) {
   })
 }
 export default async function (cid) {
+  console.log('Trying directly...')
   for(let i = 0, cids = tryAllCids(cid); i < cids.length; i++){
+    console.log(`all cids: ${cids.join(',')}; Trying ${cids[i]}`)
     let res = await tryIt(cids[i])
     if(res.length != 0){
+      console.log('Succeed')
       return {
         isSuccess: true,
         result: res
       }
     }
   }
+  console.log(`Failed! Reason:尝试所有可能失败`)
   return {
     isSuccess: false,
     result: ''
