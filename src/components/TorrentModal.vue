@@ -64,6 +64,6 @@ export default {
   white-space: nowrap;
 }
 #torrent-modal tr.el-table__row:hover{
-  background-image: linear-gradient(left, rgba(35,153,41,0) 0%, rgba(35,153,41,.5) 50%, rgba(35,153,41,0) 100%);
+  background-image: -webkit-gradient(linear,left top,right top,color-stop(0, rgba(35,153,41,0)),color-stop(0.5, rgba(35,153,41,.5)),color-stop(1, rgba(35,153,41,0)))
 }
 </style>

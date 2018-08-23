@@ -20,7 +20,7 @@
 .win_compatible{
     width: calc(100% + 20px) !important;
     box-sizing: border-box !important;
-    padding-right: 0 !important; 
+    padding-right: 0 !important
 }
 .null {
 
@@ -97,7 +97,7 @@ export default {
   },
   data () {
     return {
-        isWin: this.$store.state.isWin
+      isWin: this.$store.state.isWin
     }
   },
   computed: {
