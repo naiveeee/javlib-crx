@@ -4,8 +4,7 @@ import tryAllCids from './tryAllCids'
 function tryIt (cid, index = 1) {
   let url = `https://pics.dmm.co.jp/digital/video/${cid}/${cid}jp-${index}.jpg`
   return axios({
-    url: url,
-    method: 'head'
+    url: url
   })
   .then(resp => {
     if(resp.request.responseURL === url){
