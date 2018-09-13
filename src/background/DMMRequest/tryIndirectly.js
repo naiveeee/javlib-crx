@@ -25,6 +25,8 @@ export default function (id) {
     // 匹配第一个符合条件的cid
     for (let i = 0; i < nodeList.length; i++) {
       let cid = nodeList[i].href.match(/cid=(.*)\//)[1]
+      console.log(cid)
+      console.log(reg)
       if (reg.test(cid)) {
         return axios({
           url: nodeList[i].href,

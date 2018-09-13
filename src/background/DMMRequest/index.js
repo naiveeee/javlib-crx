@@ -1,18 +1,17 @@
 import tryDirectly from './tryDirectly'
 import tryIndirectly from './tryIndirectly'
-export default async (id, cid, postMessage) => {
-  var directResp,
-    indirectResp
+export default async (id, cid) => {
+  let directResp
+  let indirectResp
   directResp = await tryDirectly(cid)
   if (directResp.isSuccess) {
-    return postMessage(directResp)
+    return directResp
   }
   indirectResp = await tryIndirectly(id)
-  return postMessage(indirectResp)
+  return indirectResp
 }
-var startTime = new Date()
-tryDirectly('meyd00402').then(resp => {
-  console.log(resp)
-  var endTime = new Date()
-  console.log(endTime - startTime)
-})
+// var startTime = new Date()
+// tryIndirectly('meyd-402').then(response => {
+//   var endTime = new Date()
+//   console.log(endTime - startTime)
+// })
